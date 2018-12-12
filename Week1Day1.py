@@ -4,9 +4,9 @@ def translate(email):
     # given email contains only 1 @
     username, domain = email.split('@')
 
-    translatedName = username.replace('.', '')
+    translatedName = username.split('+')[0]
 
-    translatedName = translatedName.split('+')[0]
+    translatedName = translatedName.replace('.', '')
     # handles empty string as well
     
     result = '{0}@{1}'.format(translatedName, domain)
